@@ -9,18 +9,19 @@ before_install:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
     - export PATH=$HOME/.yarn/bin:$PATH
 install:
-    - yarn global add generator-jhipster yo
-    - yarn install
-    - yarn link
+    - npm install -g generator-jhipster yo
+    - npm install
+    - npm link
 script:
-    - yarn test
+    - npm test
     # generate default blueprint
     - mkdir -p $HOME/generator-jhipster-helloworld && cd $HOME/generator-jhipster-helloworld
-    - yarn link generator-jhipster-blueprint
+    - npm link generator-jhipster-blueprint
     - yo jhipster-blueprint default
-    - yarn install
-    - yarn link
+    - npm install
+    - npm link
     # generate a JHipster project, using blueprint
     - mkdir -p $HOME/app && cd $HOME/app
+    - npm link generator-jhipster-helloworld
     - curl https://raw.githubusercontent.com/jhipster/generator-jhipster/master/travis/samples/ngx-default/.yo-rc.json -o .yo-rc.json
     - jhipster --blueprint helloworld --force --no-insight
