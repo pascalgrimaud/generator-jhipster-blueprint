@@ -16,8 +16,10 @@ script:
     # ----- integration tests
     # clone generator-jhipster
     - cd $HOME
-    - git clone https://github.com/jhipster/generator-jhipster generator-jhipster
+    - git clone https://github.com/pascalgrimaud/generator-jhipster generator-jhipster
     - cd generator-jhipster
+    - git checkout -b blueprint-fix-writeFiles origin/blueprint-fix-writeFiles
+    - git --no-pager log -n 10 --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     - npm install && npm link
     # generate default blueprint
     - mkdir -p $HOME/generator-jhipster-helloworld && cd $HOME/generator-jhipster-helloworld
