@@ -13,14 +13,23 @@ install:
     - npm install
     - npm link
 script:
+    # ----- local tests
     - npm test
+
+    # ----- integration tests
+    # clone generator-jhipster
+    - cd $HOME
+    - git clone https://github.com/jhipster/generator-jhipster generator-jhipster
+    - cd generator-jhipster
+    - npm install && npm link
     # generate default blueprint
     - mkdir -p $HOME/generator-jhipster-helloworld && cd $HOME/generator-jhipster-helloworld
     - npm link generator-jhipster-blueprint
     - yo jhipster-blueprint default
     - npm install
     - npm link
-    # generate a JHipster project, using blueprint
+    - npm link generator-jhipster
+    # generate a JHipster project, using blueprint helloworld
     - mkdir -p $HOME/app && cd $HOME/app
     - npm link generator-jhipster-helloworld
     - curl https://raw.githubusercontent.com/jhipster/generator-jhipster/master/travis/samples/ngx-default/.yo-rc.json -o .yo-rc.json
