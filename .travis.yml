@@ -32,4 +32,5 @@ script:
     - mkdir -p $HOME/app && cd $HOME/app
     - npm link generator-jhipster-helloworld
     - curl https://raw.githubusercontent.com/jhipster/generator-jhipster/master/travis/samples/ngx-default/.yo-rc.json -o .yo-rc.json
+    - sed -i -e 's/yarn/npm/g' .yo-rc.json
     - jhipster --blueprint helloworld --force --no-insight
