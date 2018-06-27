@@ -9,7 +9,7 @@ before_install:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
     - export PATH=$HOME/.yarn/bin:$PATH
 install:
-    - npm install -g generator-jhipster yo
+    - npm install -g yo
     - npm install
     - npm link
 script:
