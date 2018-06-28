@@ -90,13 +90,13 @@ module.exports = class extends ClientGenerator {
 
     get writing() {
         // The writing phase is being overriden so that we can write our own templates
-        return {
-            write() {
-                writeFiles.call(this);
-            }
-        };
+        // return {
+        //     write() {
+        //         writeFiles.call(this);
+        //     }
+        // };
         // If the templates doesnt need to be overrriden then use the below commented return instead
-        // return super._writing();
+        return super._writing();
     }
 
     get install() {
