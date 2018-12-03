@@ -47,9 +47,10 @@ script:
   - npm link generator-jhipster-blueprint
   - yo jhipster-blueprint default
   - npm install
-  - npm test
   - npm link
   - npm link generator-jhipster
+  - ls -al /home/travis/.nvm/versions/node/v10.13.0/lib/node_modules/
+  - npm test
 
   # force no insight
   - mkdir -p "$HOME"/.config/configstore/
