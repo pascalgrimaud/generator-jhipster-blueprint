@@ -62,7 +62,6 @@ script:
   - curl https://raw.githubusercontent.com/jhipster/generator-jhipster/master/test-integration/samples/.jhipster/Label.json -o .jhipster/Label.json
   - curl https://raw.githubusercontent.com/jhipster/generator-jhipster/master/test-integration/samples/.jhipster/Operation.json -o .jhipster/Operation.json
 
-  - npm link generator-jhipster
   - npm link generator-jhipster-helloworld
   - jhipster --blueprint helloworld --force --no-insight
 
