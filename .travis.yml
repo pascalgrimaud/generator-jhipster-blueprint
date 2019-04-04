@@ -33,6 +33,11 @@ script:
   - npm test
 
   # ----- integration tests
+  # clone jhipster
+  - cd $HOME
+  - git clone https://github.com/jhipster/jhipster jhipster
+  - cd jhipster
+  - ./mvnw clean install -Dgpg.skip=true
   # clone generator-jhipster
   - cd $HOME
   - git clone https://github.com/jhipster/generator-jhipster generator-jhipster
