@@ -20,6 +20,7 @@ env:
     - JHIPSTER_TRAVIS=$TRAVIS_BUILD_DIR/travis
     - JHIPSTER_SAMPLES=$JHIPSTER_TRAVIS/samples
     - JHIPSTER_SCRIPTS=$JHIPSTER_TRAVIS/scripts
+    - JHI_DISABLE_WEBPACK_LOGS=true
     - APP_FOLDER=$HOME/app
 before_install:
   # Update NPM
